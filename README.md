@@ -1,21 +1,21 @@
-## Projet Démonstration : Spring Boot WebFlux et Kafka
+## Demo Project: Spring Boot WebFlux and Kafka
 #### Description
-Ce projet de démonstration illustre l'intégration de Spring Boot avec WebFlux pour créer des applications réactives et l'utilisation de Kafka pour le traitement des messages en temps réel. L'objectif est de fournir un exemple pratique de la manière dont ces technologies peuvent être combinées pour créer des systèmes scalables et performants.
-#### Fonctionnalités
-- Spring Boot WebFlux : Implémentation de services réactifs utilisant le paradigme non-bloquant pour une meilleure scalabilité.
-- Apache Kafka : Gestion de la communication asynchrone entre les différents composants de l'application via des topics Kafka.
-- Exemples d'API : Points de terminaison pour illustrer l'envoi et la réception de messages via Kafka.
-#### Prérequis
-- Java 17 ou version ultérieure
-- Apache Kafka (installé et en cours d'exécution)
-- Maven (pour la gestion des dépendances)
+This demo project illustrates the integration of Spring Boot with WebFlux to create reactive applications and the use of Kafka for real-time message processing. The goal is to provide a practical example of how these technologies can be combined to build scalable and high-performance systems.
+#### Features
+- Spring Boot WebFlux: Implementation of reactive services using a non-blocking paradigm for improved scalability.
+- Apache Kafka: Management of asynchronous communication between different components of the application via Kafka topics.
+- API Examples: Endpoints to demonstrate sending and receiving messages via Kafka.
+#### Prerequisites
+- Java 17 or later
+- Apache Kafka (installed and running)
+- Maven (for dependency management)
 #### Installation
-- 1. Clonez le dépôt : https://github.com/abdoulkarim20/Spring-WebFlux-Apache-Kafka
-- 2. Accédez au répertoire du projet : cd Spring-WebFlux-Apache-Kafka/productmanagement
-- 3. Compilez et exécutez le projet
-- 4. Assurez-vous que Kafka est en cours d'exécution : Vous pouvez télécharger et démarrer Kafka à partir de kafka.apache.org.
-#### NB : Pour une meilleure demonstration :
-Veuillez suivre les instructions de la documentation officielle pour installer Apache Kafka sur votre machine. Ce guide vous aidera à configurer Kafka et à démarrer un broker localement.
+- 1. Clone the repository: https://github.com/abdoulkarim20/Spring-WebFlux-Apache-Kafka
+- 2. Navigate to the project directory: cd Spring-WebFlux-Apache-Kafka/productmanagement
+- 3. Build and run the project: mvn spring-boot:run
+- 4. Ensure Kafka is running: You can download and start Kafka from kafka.apache.org.
+#### Note: For a better demonstration :
+For a better demonstration, please follow the instructions in the official documentation to install Apache Kafka on your machine. This guide will help you configure Kafka and start a local broker. You can find the guide at https://kafka.apache.org/quickstart.
 #### Configuration
-- Renommez le fichier de configuration : Dans le répertoire src/main/resources, renommez le fichier exemple.properties en application.properties.
-- Modifiez les paramètres selon vos besoins : Ouvrez application.properties et ajustez les configurations en fonction de votre environnement, notamment les paramètres de Kafka et d'autres propriétés spécifiques à votre application.
+- Rename the configuration file: In the src/main/resources directory, rename the file exemple.properties to application.properties.
+- Modify the settings as needed: Open application.properties and adjust the configurations according to your environment, including Kafka settings and other properties specific to your application.
