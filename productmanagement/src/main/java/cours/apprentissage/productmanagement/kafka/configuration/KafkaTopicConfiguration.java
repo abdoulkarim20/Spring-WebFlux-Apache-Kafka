@@ -11,4 +11,8 @@ public class KafkaTopicConfiguration {
     public NewTopic productTopic() {
         return TopicBuilder.name("product-management").build();
     }
+    @Bean
+    public NewTopic productTopicJson() {
+        return TopicBuilder.name("product-json").build();
+    }
 }
