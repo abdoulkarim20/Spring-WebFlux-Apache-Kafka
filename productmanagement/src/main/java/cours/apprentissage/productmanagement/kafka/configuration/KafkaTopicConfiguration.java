@@ -15,4 +15,8 @@ public class KafkaTopicConfiguration {
     public NewTopic productTopicJson() {
         return TopicBuilder.name("product-json").build();
     }
+    @Bean
+    public NewTopic wikimediaStreamTopic() {
+        return TopicBuilder.name("wikimedia-stream").build();
+    }
 }
