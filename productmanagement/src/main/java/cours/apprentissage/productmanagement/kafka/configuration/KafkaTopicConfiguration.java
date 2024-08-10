@@ -11,12 +11,19 @@ public class KafkaTopicConfiguration {
     public NewTopic productTopic() {
         return TopicBuilder.name("product-management").build();
     }
+
     @Bean
     public NewTopic productTopicJson() {
         return TopicBuilder.name("product-json").build();
     }
+
     @Bean
     public NewTopic wikimediaStreamTopic() {
         return TopicBuilder.name("wikimedia-stream").build();
+    }
+
+    @Bean
+    public NewTopic categoryStreamTopic() {
+        return TopicBuilder.name("category-json").build();
     }
 }

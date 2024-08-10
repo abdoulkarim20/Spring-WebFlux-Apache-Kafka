@@ -1,6 +1,6 @@
 package cours.apprentissage.productmanagement.kafka.producer;
 
-import cours.apprentissage.productmanagement.business.category.dtos.CategoryRequestDTO;
+import cours.apprentissage.productmanagement.business.stream.dtos.MessageRequestDTO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.KafkaHeaders;
@@ -11,14 +11,14 @@ import org.springframework.stereotype.Service;
 @Service
 @Slf4j
 public class KafkaJsonProducer {
-    private final KafkaTemplate<String, CategoryRequestDTO> kafkaTemplate;
+    private final KafkaTemplate<String, MessageRequestDTO> kafkaTemplate;
 
-    public KafkaJsonProducer(KafkaTemplate<String, CategoryRequestDTO> kafkaTemplate) {
+    public KafkaJsonProducer(KafkaTemplate<String, MessageRequestDTO> kafkaTemplate) {
         this.kafkaTemplate = kafkaTemplate;
     }
-    public void send(CategoryRequestDTO categoryRequestDTO) {
-        Message<CategoryRequestDTO>message= MessageBuilder
-                .withPayload(categoryRequestDTO)
+    public void send(MessageRequestDTO messageRequestDTO) {
+        Message<MessageRequestDTO>message= MessageBuilder
+                .withPayload(messageRequestDTO)
                 .setHeader(KafkaHeaders.TOPIC,"product-json")
                 .build();
         kafkaTemplate.send(message);

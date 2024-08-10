@@ -1,30 +1,42 @@
 package cours.apprentissage.productmanagement.business.category;
 
-import cours.apprentissage.productmanagement.business.category.dtos.CategoryRequestDTO;
-import cours.apprentissage.productmanagement.kafka.producer.KafkaJsonProducer;
-import cours.apprentissage.productmanagement.kafka.producer.KafkaProducer;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import cours.apprentissage.productmanagement.business.category.dtos.CategoryDTO;
+import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
+import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping("/api/v1/category")
+@RequestMapping("/api/v1/categories")
 public class CategoryController {
-    private final KafkaProducer kafkaProducer;
-    private final KafkaJsonProducer kafkaJsonProducer;
+    private final ICategory iCategory;
 
-    public CategoryController(KafkaProducer kafkaProducer, KafkaJsonProducer kafkaJsonProducer) {
-        this.kafkaProducer = kafkaProducer;
-        this.kafkaJsonProducer = kafkaJsonProducer;
+    public CategoryController(ICategory iCategory) {
+        this.iCategory = iCategory;
     }
 
-    @PostMapping("/message")
-    public void sendMessage(@RequestBody CategoryRequestDTO categoryRequestDTO) {
-        kafkaProducer.send(categoryRequestDTO.getTopicName(), categoryRequestDTO.getMessage());
+    @PostMapping("/save")
+    public Mono<CategoryDTO> save(@RequestBody CategoryDTO categoryDTO) {
+        return iCategory.saveCategroy(categoryDTO);
     }
-    @PostMapping("/json-message")
-    public void sendJsonMessage(@RequestBody CategoryRequestDTO categoryRequestDTO) {
-        kafkaJsonProducer.send(categoryRequestDTO);
+
+    @PutMapping("/update/{id}")
+    public Mono<CategoryDTO> update(@PathVariable Long id, @RequestBody CategoryDTO categoryDTO) {
+        categoryDTO.setId(id);
+        return iCategory.updateCategory(categoryDTO);
+    }
+
+    @GetMapping("/detail/{id}")
+    public Mono<CategoryDTO> detail(@PathVariable Long id) {
+        return iCategory.getCategoryById(id);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public Mono<Void> delete(@PathVariable Long id) {
+        return iCategory.deleteCategoryById(id);
+    }
+
+    @GetMapping("/liste")
+    public Flux<CategoryDTO> getAllCategories() {
+        return iCategory.getAllCategories();
     }
 }

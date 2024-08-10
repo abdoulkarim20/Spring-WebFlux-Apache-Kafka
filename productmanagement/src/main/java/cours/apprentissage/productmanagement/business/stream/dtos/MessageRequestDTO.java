@@ -1,4 +1,4 @@
-package cours.apprentissage.productmanagement.business.category.dtos;
+package cours.apprentissage.productmanagement.business.stream.dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,7 +9,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @Data
 @ToString
-public class CategoryRequestDTO {
+public class MessageRequestDTO {
     private String topicName;
     private String message;
 }

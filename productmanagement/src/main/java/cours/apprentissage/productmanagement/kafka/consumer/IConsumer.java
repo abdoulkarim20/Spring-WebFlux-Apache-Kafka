@@ -1,8 +1,8 @@
 package cours.apprentissage.productmanagement.kafka.consumer;
 
-import cours.apprentissage.productmanagement.business.category.dtos.CategoryRequestDTO;
+import cours.apprentissage.productmanagement.business.stream.dtos.MessageRequestDTO;
 
 public interface IConsumer {
-    void readKafkaJsonObject(CategoryRequestDTO payload);
+    void readKafkaJsonObject(MessageRequestDTO payload);
     void readWikimediaMessageStreaming(String message);
 }
