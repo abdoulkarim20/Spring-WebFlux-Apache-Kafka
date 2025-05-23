@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/productmanagement/productmanagement.iml" filepath="$PROJECT_DIR$/productmanagement/productmanagement.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/web-flux-spring-boot-kafka.iml" filepath="$PROJECT_DIR$/.idea/web-flux-spring-boot-kafka.iml" />
     </modules>
   </component>

@@ -10,4 +10,5 @@ public interface ICategory {
     Mono<CategoryDTO> getCategoryById(Long id);
     Mono<Void>deleteCategoryById(Long id);
     Flux<CategoryDTO> getAllCategories();
+    void listenClientApp(Object o);
 }

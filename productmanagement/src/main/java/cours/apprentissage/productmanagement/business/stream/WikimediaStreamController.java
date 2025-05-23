@@ -21,10 +21,10 @@ public class WikimediaStreamController {
 
     @PostMapping("/message")
     public void sendMessage(@RequestBody MessageRequestDTO messageRequestDTO) {
-        kafkaProducer.send(messageRequestDTO.getTopicName(), messageRequestDTO.getMessage());
+        /*kafkaProducer.send(messageRequestDTO.getTopicName(), messageRequestDTO.getMessage());*/
     }
-    @PostMapping("/json-message")
+    /*@PostMapping("/json-message")
     public void sendJsonMessage(@RequestBody MessageRequestDTO messageRequestDTO) {
         kafkaJsonProducer.send(messageRequestDTO);
-    }
+    }*/
 }

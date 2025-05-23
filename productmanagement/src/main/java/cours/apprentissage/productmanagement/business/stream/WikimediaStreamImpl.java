@@ -17,10 +17,10 @@ public class WikimediaStreamImpl implements IWikimediaStream {
     }
     @Override
     public void consumeStreamAndPublish(){
-        webClient.get()
+        /*webClient.get()
                 .uri("/stream/recentchange")
                 .retrieve()
                 .bodyToFlux(String.class)
-                .subscribe(wikimediaProducer::send);
+                .subscribe(wikimediaProducer::send);*/
     }
 }
